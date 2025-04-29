@@ -1,0 +1,18 @@
+setFields:
+
+regions
+(
+    planeToCell
+    {
+        pointAndNormal
+        (
+            (0 0 0.0016) // point on the plane
+            (-0.1228 0 1) // normal vector ↘ -83°
+        );
+
+        fieldValues
+        (
+            volScalarFieldValue alpha.water 1
+        );
+    }
+);
