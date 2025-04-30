@@ -3,7 +3,8 @@
 # Check for --clean flag
 if [[ "$1" == "--clean" ]]; then
     echo "Cleaning time directories and processor folders..."
-    rm -rf [0-9]*/ processor*/ VTKs/*
+    rm -rf [0-9]*/ processor*/ VTKs/* constant/polyMesh/
+    du -sh .
     exit 0
 fi
 
