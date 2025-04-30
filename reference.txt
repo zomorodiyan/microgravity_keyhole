@@ -1,7 +1,9 @@
+## Test starting case file
+- [x] Confirm it runs for a short duration
 ## Geometry
+- [ ] domain dimensions = (600um, 400um, 2000um)
 - [ ] simulation duration = 2ms
 - [ ] spot diameter = 122.5um
-- [ ] domain dimensions = (600um, 400um, 2000um)
 - [ ] setFields (7° incline)
 regions
 (
