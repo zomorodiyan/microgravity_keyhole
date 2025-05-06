@@ -14,16 +14,15 @@ FoamFile
     object      PhaseFieldProperties;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
-V_incident	(0 0 1); //Laser Beam Direction, NORMALISED IN CODE
+V_incident	(0 0 -1); //Laser Beam Direction, NORMALISED IN CODE
 
-HS_a 0.00075;
+HS_a 0.0001225;//0.00075; // spot size
 HS_bg 0.0;//20
 HS_velocity 0.0;//6.0;
-HS_lg 5e-5;
+HS_lg 0.0002;// 5e-5;
 HS_Q 5000.0;//
 
-
-N_sub_divisions	1;
+N_sub_divisions	2;
 
 //For linear path set oscAmpX=oscAmpz=0
 //For sine path set oscAmpz=0
@@ -38,5 +37,4 @@ wavelength	1.070e-6;
 e_num_density	5.83e29;
 elec_resistivity	1.0e-6;
 
-
-Radius_Flavour	3.0;
+Radius_Flavour	3.0; // Set to 2 for 1/e² power radius or 3 for 5% power radius.
