@@ -16,12 +16,24 @@ FoamFile
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 V_incident	(0 1 0); //Laser Beam Direction, NORMALISED IN CODE
 
-//laserRadius 0.0001225;
-HS_a 0.0001225; // spot size
-HS_bg 0.0;//20
-HS_velocity 0.0;//6.0;
-HS_lg 0.0002;// 5e-5;
-HS_Q 5000.0;//
+timeVsLaserPosition
+{
+  file "$FOAM_CASE/constant/timeVsLaserPosition";
+  outOfBounds clamp;
+}
+
+timeVsLaserPower
+{
+  file "$FOAM_CASE/constant/timeVsLaserPower";
+  outOfBounds clamp;
+}
+
+laserRadius 0.0001225;
+//HS_a 0.0001225; // spot size
+//HS_bg 0.0;//20
+//HS_velocity 0.0;//6.0;
+//HS_lg 0.0002;// 5e-5;
+//HS_Q 5000.0;//
 
 N_sub_divisions	1;
 
@@ -36,7 +48,6 @@ HS_oscFreqZ 180;
 
 wavelength	1.070e-6;
 e_num_density	5.83e29;
-elec_resistivity	1.0e-6; 
 
 debug no;
 

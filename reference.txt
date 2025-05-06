@@ -2,7 +2,7 @@
 - [x] Confirm it runs for a short duration
 ## Geometry
 - [x] domain dimensions = (600um, 400um, 2000um)
-- [x] simulation duration = 2ms
+- [ ] simulation duration = 2ms
 - [ ] spot diameter = 122.5um, what Radius_Flavor= 2 or 3?
 - [ ] setFields (7° incline)
 regions
@@ -45,6 +45,6 @@ regions
 - [ ] Viscosity = exp(-1.6 + 5346/T)*1e-3
 - [ ] Material = Ti-6Al-4V
 ## Laser
-- [x] wavelength 1070nm, Yb-doped fiber laser
+- [ ] wavelength 1070nm, Yb-doped fiber laser
 - [ ] Minor degree of ellipticity
 - [ ] Q_laser = 2*P/(Pi*rb^2)*exp(-2r^2/rb^2)
