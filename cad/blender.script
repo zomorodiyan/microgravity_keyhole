@@ -1,0 +1,72 @@
+import bpy
+import bmesh
+import math
+from mathutils import Vector
+
+# Geometry parameters
+x_len = 600e-6
+z_len = 400e-6
+angle_rad = math.radians(7)
+
+# Front face y-coordinates
+y0 = -1600e-6  # at x = 0
+y1 = y0 - x_len * math.tan(angle_rad)  # at x = 600 um
+
+# Define vertices
+verts = [
+    Vector((0, y0, 0)),             # 0: bottom front left
+    Vector((x_len, y1, 0)),         # 1: bottom front right
+    Vector((x_len, 0, 0)),          # 2: bottom back right
+    Vector((0, 0, 0)),              # 3: bottom back left
+
+    Vector((0, y0, z_len)),         # 4: top front left
+    Vector((x_len, y1, z_len)),     # 5: top front right
+    Vector((x_len, 0, z_len)),      # 6: top back right
+    Vector((0, 0, z_len)),          # 7: top back left
+]
+
+faces = [
+    (0, 1, 2, 3),  # bottom
+    (4, 5, 6, 7),  # top
+    (0, 4, 7, 3),  # left
+    (1, 5, 6, 2),  # right
+    (3, 2, 6, 7),  # back
+    (0, 1, 5, 4),  # front (slanted)
+]
+
+# Clear scene
+bpy.ops.object.select_all(action='SELECT')
+bpy.ops.object.delete()
+
+# Create mesh
+mesh = bpy.data.meshes.new("SlantedBlock")
+obj = bpy.data.objects.new("SlantedBlock", mesh)
+bpy.context.collection.objects.link(obj)
+
+bm = bmesh.new()
+for v in verts:
+    bm.verts.new(v)
+bm.verts.ensure_lookup_table()
+for f in faces:
+    bm.faces.new([bm.verts[i] for i in f])
+bm.to_mesh(mesh)
+bm.free()
+
+# Set micrometer units
+scene = bpy.context.scene
+scene.unit_settings.system = 'METRIC'
+scene.unit_settings.scale_length = 1e-6
+scene.unit_settings.length_unit = 'MICROMETERS'
+
+# Adjust viewport
+for area in bpy.context.screen.areas:
+    if area.type == 'VIEW_3D':
+        for space in area.spaces:
+            if space.type == 'VIEW_3D':
+                space.clip_start = 1e-6
+                space.clip_end = 0.1
+                r3d = space.region_3d
+                r3d.view_location = Vector((x_len / 2, -1600e-6, z_len / 2))
+                r3d.view_distance = 0.002
+                r3d.view_rotation = mathutils.Quaternion((1, 0, 0, 0))
+

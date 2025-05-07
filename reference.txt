@@ -5,23 +5,6 @@
 - [ ] simulation duration = 2ms
 - [ ] spot diameter = 122.5um, what Radius_Flavor= 2 or 3?
 - [ ] setFields (7° incline)
-regions
-(
-    planeToCell
-    {
-        pointAndNormal
-        (
-            (0 0 0.0016) // point on the plane
-            (-0.1228 0 1) // normal vector ↘ -83°
-        );
-
-        fieldValues
-        (
-            volScalarFieldValue alpha.water 1
-        );
-    }
-);
-##
 - [ ] density in solid phase 4575-0.168*T
 - [ ] density in liquid phase 4616.5-0.254*T
 - [ ] absorptance Fresnel equation alpha(epsilon, theta) =
@@ -44,6 +27,7 @@ regions
 - [ ] Latent heat evaporation = 9.83e3 [J/kg]
 - [ ] Viscosity = exp(-1.6 + 5346/T)*1e-3
 - [ ] Material = Ti-6Al-4V
+
 ## Laser
 - [ ] wavelength 1070nm, Yb-doped fiber laser
 - [ ] Minor degree of ellipticity
