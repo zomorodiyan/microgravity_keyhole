@@ -2,7 +2,7 @@
 - [x] Confirm it runs for a short duration
 ## Geometry
 - [x] domain dimensions = (600um, 400um, 2000um)
-- [ ] simulation duration = 2ms
+- [x] simulation duration = 2ms
 - [ ] spot diameter = 122.5um, what Radius_Flavor= 2 or 3?
 - [ ] setFields (7° incline)
 - [ ] density in solid phase 4575-0.168*T
