@@ -4,8 +4,8 @@ import math
 from mathutils import Vector
 
 # Geometry parameters
-x_len = 600e-6
-z_len = 400e-6
+x_len = 500e-6
+z_len = 500e-6
 angle_rad = math.radians(7)
 
 # Front face y-coordinates
