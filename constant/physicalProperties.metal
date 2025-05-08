@@ -14,21 +14,22 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-viscosityModel  constant;
+viscosityModel    constant;
 
-nu              5e-07;
+nu                4.5e-7;           // Kinematic viscosity [m^2/s] ≈ μ/ρ
+rho               4275;             // Density near melting (avg between solid/liquid)
 
-rho             8000;
+poly_kappa        (10 0.015 0 0 0 0 0 0);  // Thermal conductivity [W/m·K] fitted approx.
 
-    poly_kappa   (10 0.015 0 0 0 0 0 0);
-    //poly_cp   (244.8 9.587e-1 -3.77e-4 6.5e-8 -4.14e-12 0 0 0);
-    poly_cp   (520 0.075 0 0 0 0 0 0);
-    
-	Tsolidus 1658;
-	Tliquidus 1723;
-    LatentHeat 2.7e5;
-    beta    5.0e-6;
+poly_cp           (520 0.075 0 0 0 0 0 0); // Cp ≈ 520 + 0.075*T; T in K, near melt
 
-elec_resistivity	1.0e-6; 
+Tsolidus          1877;             // Solidus temperature [K]
+Tliquidus         1923;             // Liquidus temperature [K]
+LatentHeat        2.86e2;           // Latent heat of fusion [J/kg]
+
+beta              6.05e-5;          // Thermal expansion coefficient [1/K]
+
+elec_resistivity  1.0e-6;           // Electrical resistivity [Ohm·m]
+
 
 // ************************************************************************* //
