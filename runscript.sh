@@ -21,7 +21,7 @@ setFields
 decomposePar
 
 # Run simulation in parallel
-mpirun --oversubscribe -np 12 laserbeamFoam -parallel > log &
+mpirun --oversubscribe -np 16 laserbeamFoam -parallel > log &
 
 # Monitor log output
 tail -f log

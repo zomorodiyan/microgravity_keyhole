@@ -27,7 +27,7 @@ regions
         file "$FOAM_CASE/cad/incline.stl";
         nearDistance 1e-7;
         curvature 1e-4;
-        outsidePoints ((3e-4 -1.9e-3 2e-4));
+        outsidePoints ((3e-4 -1.75e-3 2e-4));
         regularization 1e-6;
         smooth 0;
 

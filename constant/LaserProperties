@@ -52,5 +52,5 @@ e_num_density	5.83e29;
 
 debug no;
 
-Radius_Flavour	3.0; // Set to 2 for 1/e² power radius or 3 for 5% power radius.
+Radius_Flavour	2; // Set to 2 for 1/e² power radius or 3 for 5% power radius.
 
